@@ -4,7 +4,11 @@ import java.util.Scanner;
 
 public class Kata {
     public static void main(String[] args) {
-        File inputFile = new File("./input.txt");
+        if (args.length != 1) {
+            System.out.println("Usage: java Kata <input_file>");
+            System.exit(1);
+        }
+        File inputFile = new File(args[0]);
         try {
             Scanner scanner = new Scanner(inputFile);
             Lawn lawn = initializeLawn(scanner);
